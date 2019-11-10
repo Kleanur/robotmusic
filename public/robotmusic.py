@@ -13,6 +13,7 @@ BAS_RANGE = range(1, 5)
 SONG_DURATION = 16
 RANDOM_PITCHLIST = range(12)
 SCALE_PITCHLIST = [0, 2, 4, 5, 7, 9, 11]
+BLUES_PITCHLIST = [9, 0, 2, 3, 4, 7]
 
 I_PITCHLIST_AT = [0, 4, 7]
 I_PITCHLIST_B = [0]
@@ -49,22 +50,22 @@ def writesong():
             tenor += random_notes(I_PITCHLIST_AT, TEN_RANGE, 1, 90)
             bass += random_notes(I_PITCHLIST_B, BAS_RANGE, 1, 120)
         elif x % 4 == 0:
-            soprano += random_notes(I_PITCHLIST_AT, SOP_RANGE, 0.0625, 120)
+            soprano += random_notes(RANDOM_PITCHLIST, SOP_RANGE, 0.0625, 120)
             alto += random_notes(I_PITCHLIST_AT, ALT_RANGE, 0.125, 90)
             tenor += random_notes(I_PITCHLIST_AT, TEN_RANGE, 0.25, 90)
             bass += random_notes(I_PITCHLIST_B, BAS_RANGE, 0.5, 90)
         elif x % 4 == 1:
-            soprano += random_notes(SCALE_PITCHLIST, SOP_RANGE, 0.0625, 120)
+            soprano += random_notes(RANDOM_PITCHLIST, SOP_RANGE, 0.0625, 120)
             alto += random_notes(IV_PITCHLIST_AT, ALT_RANGE, 0.125, 90)
             tenor += random_notes(IV_PITCHLIST_AT, TEN_RANGE, 0.25, 90)
             bass += random_notes(IV_PITCHLIST_B, BAS_RANGE, 0.5, 90)
         elif x % 4 == 2:
-            soprano += random_notes(SCALE_PITCHLIST, SOP_RANGE, 0.0625, 120)
+            soprano += random_notes(RANDOM_PITCHLIST, SOP_RANGE, 0.0625, 120)
             alto += random_notes(V_PITCHLIST_AT, ALT_RANGE, 0.125, 90)
             tenor += random_notes(V_PITCHLIST_AT, TEN_RANGE, 0.25, 90)
             bass += random_notes(V_PITCHLIST_B, BAS_RANGE, 0.5, 90)
         elif x % 4 == 3:
-            soprano += random_notes(SCALE_PITCHLIST, SOP_RANGE, 0.0625, 120)
+            soprano += random_notes(RANDOM_PITCHLIST, SOP_RANGE, 0.0625, 120)
             alto += random_notes(VI_PITCHLIST_AT, ALT_RANGE, 0.125, 90)
             tenor += random_notes(VI_PITCHLIST_AT, TEN_RANGE, 0.25, 90)
             bass += random_notes(VI_PITCHLIST_B, BAS_RANGE, 0.5, 90)
@@ -78,4 +79,4 @@ def writesong():
     return midi
 
 
-writesong().write("new-test.mid")
+writesong().write("art.mid")
